@@ -45,7 +45,6 @@ class ATM:
                 tx = CheckBalance(tx_id, acc, "Xem số dư")
                 bal = tx.execute()
                 self.screen.showMessage(f"Số dư tài khoản: {self.printer.format_money(bal)} VNĐ")
-                # Không in biên lai cho Xem số dư
 
             elif choice == "2":
                 amt = float(self.keypad.getInput("Số tiền rút"))
@@ -84,7 +83,6 @@ class ATM:
                 tx = ChangePin(tx_id, acc, card)
                 res = tx.execute(old, new, conf)
                 self.screen.showMessage(res)
-                # Đã lược bỏ lệnh self.printer.printReceipt tại đây để không in biên lai khi đổi PIN
 
             elif choice == "6":
                 self.screen.showMessage("Vui lòng nhận lại thẻ.")
