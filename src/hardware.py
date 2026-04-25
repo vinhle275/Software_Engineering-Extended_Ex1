@@ -24,13 +24,11 @@ class DepositSlot:
 class Printer:
     @staticmethod
     def format_money(amount):
-        # Định dạng: 5000000 -> 5 000 000
         return "{:,}".format(int(amount)).replace(",", " ")
 
     def printReceipt(self, status, amount, balance, description):
         print("\n" + "*"*35)
         print("         BIÊN LAI GIAO DỊCH")
-        # Đã lược bỏ Mã giao dịch theo yêu cầu
         print(f" Loại giao dịch: {description}")
         if amount > 0:
             print(f" Số tiền: {self.format_money(amount)} VNĐ")
